@@ -1,0 +1,5 @@
+.sidenav{
+  background-color: var(--color-secondary);
+  min-width: 275px;
+}
+

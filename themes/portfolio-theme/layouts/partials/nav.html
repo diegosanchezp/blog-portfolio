@@ -1,0 +1,21 @@
+<!-- PROFILE DATA -->
+
+<img class="mb-2" src="/Images/ProfilePic.jpg" alt="Profile Picture"> 
+<p class="text-center uppercase text-primary">Diego Sánchez</p>
+<p class="text-center">Full Stack Web Developer</p>
+
+<!-- HUGO MENU -->
+<a class="my-2 font-bold" href="/" title="Home Page">Home</a> 
+{{ $currentPage := . }}
+  {{ range .Site.Menus.main }}
+    <hr>
+    <a 
+      class="my-2 font-bold
+      sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" 
+      href="{{ .URL }}" 
+      title="{{ .Title }} page"
+    >
+      {{ .Name }}
+    </a>
+{{ end }}
+

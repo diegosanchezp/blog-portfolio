@@ -1,0 +1,39 @@
+### Hugo ###
+
+# Generated files by hugo
+/public/
+/resources/_gen/
+
+# JavaScript build files
+
+hugo/data/components.json
+hugo/data/styles.json
+hugo/static/components
+hugo/static/styles
+
+### End Hugo ###
+
+# compiled output
+**/dist
+**/tmp
+**/out-tsc
+
+## npm
+**/node_modules/
+**/npm-debug.log
+
+# misc
+.env
+.sass-cache
+NOTES.md
+ROADMAP.md
+secrets.json
+connect.lock
+resources
+archive
+coverage
+typings
+libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log

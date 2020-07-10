@@ -1,0 +1,9 @@
+/*The theme main file*/
+
+:root {
+  --color-primary: #FFCC00;
+  --color-secondary: #121212;
+  --color-bg: black;
+  --color-text-default: white;
+  --color-lightwhite: hsla(0,0%,100%,.12);
+}

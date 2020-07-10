@@ -1,4 +1,6 @@
 <head>
+    <!-- Website metadata -->
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ block "title" . }}
@@ -14,12 +16,20 @@
     <meta name="author" content="{{ .Params.Author}}" />
     {{ end -}}
     {{ hugo.Generator }}
+    
+    <!-- CSS -->
 
-    {{- $styles := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/postcss.config.js") -}}
-    {{- if .Site.IsServer }}
-    <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
-    {{ else }}
-        {{- $styles := $styles| minify | fingerprint | resources.PostProcess -}}
-    <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
-    {{ end -}}
+    {{- $styles := resources.Get "css/main.css" | postCSS (dict "config" "./assets/css/postcss.config.js") -}}
+
+    {{ if getenv "MODE" | eq .Site.Data.enval.dev }}
+
+      <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
+
+    {{else if getenv "MODE" | eq .Site.Data.enval.prod }}
+
+      {{- $styles := $styles| minify | fingerprint | resources.PostProcess -}}
+      <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
+
+    {{ end }}
+
 </head>
