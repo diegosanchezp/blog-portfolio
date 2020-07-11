@@ -12,4 +12,4 @@ theme = "portfolio-theme"
 
   [[module.mounts]]
     source = "./themes/portfolio-theme/node_modules/@fortawesome/fontawesome-free/svgs"
-    target = "static/svgs/" 
+    target = "assets/svgs/" 
