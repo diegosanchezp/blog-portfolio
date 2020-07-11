@@ -24,6 +24,7 @@
     "not dead"
   ],
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.1",
     "vanilla-ripplejs": "^1.0.6"
   }
 }

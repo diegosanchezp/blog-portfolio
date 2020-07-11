@@ -3,3 +3,9 @@
   min-width: 275px;
 }
 
+.sidenav-icons img {
+  max-width: 100%;
+  min-width: 45px;
+  filter: invert(96%) sepia(100%) saturate(18%) hue-rotate(326deg) brightness(106%) contrast(104%);
+}
+

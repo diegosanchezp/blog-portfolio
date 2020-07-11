@@ -33,7 +33,7 @@
     {{ end }}
 
     <!-- JS -->
-
-    <script defer src="/ripple.min.js"></script>
-
+    {{ $ripple := resources.Get "js/ripple.min.js" }}
+    <script defer src="{{$ripple.Permalink}}"></script>
+    
 </head>
