@@ -3,9 +3,13 @@ languageCode = "en-us"
 title = "Diego Sánchez portfolio"
 theme = "portfolio-theme"
 
+
 [module]
 
   [[module.mounts]]
     source = "./themes/portfolio-theme/node_modules/vanilla-ripplejs/ripple.min.js"
-    target = "static/ripple.min.js"
+    target = "assets/js/ripple.min.js"
 
+  [[module.mounts]]
+    source = "./themes/portfolio-theme/node_modules/@fortawesome/fontawesome-free/svgs"
+    target = "static/svgs/" 
