@@ -1,6 +1,15 @@
 .sidenav{
   background-color: var(--color-secondary);
-  min-width: 275px;
+  min-width: 243px;
+
+  /*Hide Scrollbars But Keep Functionality*/
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/*Hide Scrollbars But Keep Functionality*/
+.sidenav::-webkit-scrollbar{
+  display: none;
 }
 
 .sidenav-icons img {

@@ -1,31 +1,39 @@
 <!-- PROFILE DATA -->
 
-<img class="mb-2" src="/Images/ProfilePic.jpg" alt="Profile Picture"> 
-<p class="text-center uppercase text-primary">Diego Sánchez</p>
-<p class="text-center">Full Stack Web Developer</p>
+<aside class="sidenav flex flex-col p-2 h-screen border border-solid border-lightwhite overflow-y-auto">
 
-<!-- HUGO MENU -->
-<a class="my-2 font-bold" href="/" title="Home Page">Home</a> 
-{{ $currentPage := . }}
-  {{ range .Site.Menus.main }}
-    <hr>
-    <a 
-      class="my-2 font-bold
-      sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" 
-      href="{{ .URL }}" 
-      title="{{ .Title }} page"
-    >
-      {{ .Name }}
+  <img class="mb-2" src="/Images/ProfilePic.jpg" alt="Profile Picture"> 
+  <p class="text-center uppercase text-primary">Diego Sánchez</p>
+  <p class="text-center">Full Stack Web Developer</p>
+
+  <!-- HUGO MENU -->
+  <a class="my-2 font-bold relative py-2 rounded px-2" href="/" title="Home Page">
+    Home
+  <div class="rippleJS"></div>
+  </a> 
+  {{ $currentPage := . }}
+    {{ range .Site.Menus.main }}
+      <hr>
+      <a 
+        class="my-2 font-bold
+        sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}} 
+        relative py-2 rounded px-2" 
+        href="{{ .URL }}" 
+        title="{{ .Title }} page"
+      >
+        {{ .Name }}
+        <div class="rippleJS"></div>
+      </a>
+  {{ end }}
+
+  <!-- SOCIAL MEDIA -->
+  <section class="sidenav-icons flex justify-around max-w-full">
+    <img src="{{ (resources.Get "svgs/solid/envelope.svg").Permalink }}" alt="envelope-icon">
+    <a href="https://github.com/diegosanchezp/" title="Github Account" target="_blank">
+      <img src="{{ (resources.Get "svgs/brands/github.svg").Permalink }}" alt="github-icon">
     </a>
-{{ end }}
-
-<!-- SOCIAL MEDIA -->
-<section class="sidenav-icons flex justify-around max-w-full">
-  <img src="{{ (resources.Get "svgs/solid/envelope.svg").Permalink }}" alt="envelope-icon">
-  <a href="https://github.com/diegosanchezp/">
-    <img src="{{ (resources.Get "svgs/brands/github.svg").Permalink }}" alt="github-icon">
-  </a>
-  <a href="https://github.com/diegosanchezp/">
-    <img src="{{ (resources.Get "svgs/brands/linkedin.svg").Permalink }}" alt="linkedin-icon">
-  </a>
-</section>
+    <a href="https://github.com/diegosanchezp/" title="LinkedIn Profile" target="_blank">
+      <img src="{{ (resources.Get "svgs/brands/linkedin.svg").Permalink }}" alt="linkedin-icon">
+    </a>
+  </section>
+</aside>
