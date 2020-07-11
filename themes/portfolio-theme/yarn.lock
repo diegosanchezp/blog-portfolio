@@ -1067,6 +1067,11 @@ universalify@^1.0.0:
   resolved "https://registry.yarnpkg.com/universalify/-/universalify-1.0.0.tgz#b61a1da173e8435b2fe3c67d29b9adf8594bd16d"
   integrity sha512-rb6X1W158d7pRQBg5gkR8uPaSfiids68LTJQYOtEUhoJUWBdaQHsuT/EUduxXYxcrt4r5PJ4fuHW1MHT6p0qug==
 
+vanilla-ripplejs@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/vanilla-ripplejs/-/vanilla-ripplejs-1.0.6.tgz#f650b25f68b7c4234922cd2f17f13f60a51092eb"
+  integrity sha512-vJXg9jryxSV4CgzPgmmW8Sby7UCrqyXHE6DtEpaxc3voo4CPSZTwLHPxdXsUzBx1I8lcwwtfi2jnsxYRmwoyhg==
+
 which-module@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/which-module/-/which-module-2.0.0.tgz#d9ef07dce77b9902b8a3a8fa4b31c3e3f7e6e87a"

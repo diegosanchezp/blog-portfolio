@@ -1,0 +1,6 @@
+.btn-yellow {
+  background-color: var(--color-primary);
+  color: black;
+  border-radius: 3px;
+  padding: 3px 10px;
+}
