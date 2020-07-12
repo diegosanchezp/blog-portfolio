@@ -1,0 +1,10 @@
+.center-horizontal{
+  display: flex;
+  justify-content: center;
+}
+
+/*Grid Item utils*/
+.place-self{
+  align-self: center; 
+  justify-self: center;
+}

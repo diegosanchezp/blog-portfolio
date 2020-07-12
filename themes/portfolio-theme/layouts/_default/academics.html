@@ -1,0 +1,24 @@
+{{ define "main" }} 
+
+<article class="place-self px-2">
+  <section class="flex">
+    <div class="mb-0 mt-0">
+      <p>
+        Diego is a computer science <b>student </b>at the Central University of Venezuela (UCV), 
+        he’s currently at the 6th semester.
+      </p>
+      <p>
+        He is also a <b>practical instructor</b> teaching Probability and Statistics in 
+        the UCV.
+      </p>
+    </div>
+    <img class="w-32" src="/Images/UCVLogo.png" alt="UCV Logo">
+  </section>
+
+  <div class="center-horizontal">
+		<a class="text-center" href="http://www.computacion.ciens.ucv.ve/pensum2k/docs/Plan%20de%20Estudios-aprobadoCU%20Revisado20-01-2005.pdf" target="_blank">
+    {{ partial "button.html" (dict "content" "See academic curriculum") }}
+    </a>
+  </div>
+</article>
+{{ end }} 

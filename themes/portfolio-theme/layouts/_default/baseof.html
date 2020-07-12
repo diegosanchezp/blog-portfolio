@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <head>
-      {{ partial "head.html" . }}
-    </head>
-    <main class="flex flex-row">
+    {{ partial "head.html" . }}
+    <main>
       {{ partial "nav.html" .}}
-      <article class="p-2">
-        {{ block "main" . }}{{ end }}
-      </article>
+      {{ block "main" . }}{{ end }}
     </main>
   </body>
 </html>
