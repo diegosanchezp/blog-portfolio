@@ -1,0 +1,27 @@
+<!--
+  Project card component 
+  Input: project
+  See 'project' archetype
+-->
+<article class="project-card flex flex-col rounded">
+  <!-- TITLE -->
+  <p class="text-xl capitalize m-2">{{ .title }}</p>
+
+  <!-- DEMO -->
+  <a href="https://{{ .url }}" title="See {{ .title }}" target="_blank">
+    <img src="/Images/{{ .img }}" alt="{{ .title }} preview">
+  </a>
+
+  <!-- DESCRIPTION -->
+  <p class="m-2">{{ .description }}</p>
+
+  <!-- TAGS -->
+  <section class="flex flex-row flex-wrap">
+    {{ range .tags }}
+    <div class="tag my-2 mx-2 relative rounded">
+      {{ . }}
+      <div class="rippleJS"></div>
+    </div>
+    {{ end }}
+  </section>
+</article>

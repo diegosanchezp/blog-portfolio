@@ -8,3 +8,15 @@
   align-self: center; 
   justify-self: center;
 }
+
+/*Hr utils*/
+.hr-white{
+  border-top-color: var(--color-text-default);
+}
+
+.highlight-a{
+  background-color: var(--color-primary);
+  border-radius: 3px;
+  padding: 3px;
+  color: var(--color-secondary);
+}

@@ -1,0 +1,37 @@
+{{ define "main" }}
+<!-- TODO: 
+  - This will be the project card bro 
+  - Make a project card partial 
+  - Include article
+-->
+<article class="m-2">
+  <h1 class="text-5xl">Work projects</h1>
+  <hr class="hr-white mb-4">
+  <p class="my-2">Projects that I've been employed</p>
+  <div class="grid grid-cols-3 gap-3">
+  {{ range .Data.Pages }}
+    {{ if eq .Params.type "WORK-PROJECT" }} 
+      {{ partial "project-card.html" .Params }}    
+    {{ end }}
+  {{ end }}
+  </div>
+  <h1 class="text-5xl">Miniprojects</h1>
+  <hr class="hr-white mb-4">
+  <p class="my-2">Projects done to get freecodecamp certifications</p>
+  <div class="grid grid-cols-3 gap-3">
+  {{ range .Data.Pages }}
+    {{ if eq .Params.type "MINI-PROJECT" }} 
+      {{ partial "project-card.html" .Params }}    
+    {{ end }}
+  {{ end }}
+  </div>
+
+  <h1 class="text-5xl">Others</h1>
+  <hr class="hr-white mb-4">
+  <p>
+    See my
+    <a href="https://codepen.io/diegosanchezp_/" class="highlight-a my-2 font-bold" target="_blank">codepen</a>
+    profile
+  </p>
+</article>
+{{ end }}
