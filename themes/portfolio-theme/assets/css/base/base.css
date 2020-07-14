@@ -9,6 +9,5 @@ hr{
 }
 
 main{
-  display: grid; 
   grid-template-columns: 243px auto;
 }

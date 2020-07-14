@@ -7,6 +7,8 @@
   scrollbar-width: none;  /* Firefox */
 }
 
+
+
 /*Hide Scrollbars But Keep Functionality*/
 .sidenav::-webkit-scrollbar{
   display: none;
@@ -18,3 +20,29 @@
   filter: invert(96%) sepia(100%) saturate(18%) hue-rotate(326deg) brightness(106%) contrast(104%);
 }
 
+@screen sm {
+  .sidenav-icons img{
+    margin: 0 10px;
+  } 
+}
+
+@screen sp{
+  .sidenav-icons img{
+    margin: 0 10px;
+    min-width: 25px;
+  }
+}
+
+@screen sm{
+  .sidenav-icons img{
+    margin: 0 10px;
+    min-width: 25px;
+  } 
+}
+
+
+@screen md {
+  .sidenav-profile div{
+    justify-self: center;
+  }
+}

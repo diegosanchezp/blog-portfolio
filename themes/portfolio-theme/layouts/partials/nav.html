@@ -1,33 +1,38 @@
-<!-- PROFILE DATA -->
+<aside class="sidenav flex flex-col p-2 lg:xl:h-screen xl:h-screen border border-solid border-lightwhite overflow-y-auto">
 
-<aside class="sidenav flex flex-col p-2 h-screen border border-solid border-lightwhite overflow-y-auto">
-
-  <img class="mb-2" src="/Images/ProfilePic.jpg" alt="Profile Picture"> 
-  <p class="text-center uppercase text-primary">Diego Sánchez</p>
-  <p class="text-center">Full Stack Web Developer</p>
+  <!-- PROFILE -->
+  <section class="sidenav-profile flex lg:flex-col xl:flex-col sm:flex-row md:flex-row sp:justify-center sm:justify-center md:justify-center">
+    <img class="lg:w-full sp:h-16 sp:w-16 md:rounded-sm sp:rounded-sm sm:rounded-sm md:rounded-sm md:w-16 sm:w-16 xl:mb-2 lg:mb-2" src="/Images/ProfilePic.jpg" alt="Profile Picture"> 
+    <div class="sp:self-center sm:self-center md:self-center">
+      <p class="text-center uppercase text-primary">Diego Sánchez</p>
+      <p class="sp:ml-2 sm:ml-2 md:ml-2 text-center">Full Stack Web Developer</p>
+    </div>
+  </section>
 
   <!-- HUGO MENU -->
-  <a class="my-2 font-bold relative py-2 rounded px-2" href="/" title="Home Page">
-    Home
-  <div class="rippleJS"></div>
-  </a> 
-  {{ $currentPage := . }}
-    {{ range .Site.Menus.main }}
-      <hr>
-      <a 
-        class="my-2 font-bold
-        sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}} 
-        relative py-2 rounded px-2" 
-        href="{{ .URL }}" 
-        title="{{ .Title }} page"
-      >
-        {{ .Name }}
-        <div class="rippleJS"></div>
-      </a>
-  {{ end }}
+  <section class="flex xl:flex-col lg:flex-col sm:flex-row sm:justify-center md:justify-center sp:justify-center">
+    <a class="my-2 font-bold relative py-2 rounded px-2" href="/" title="Home Page">
+      Home
+      <div class="rippleJS"></div>
+    </a> 
+    {{ $currentPage := . }}
+      {{ range .Site.Menus.main }}
+        <hr>
+        <a 
+          class="my-2 font-bold
+          sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}} 
+          relative py-2 rounded px-2" 
+          href="{{ .URL }}" 
+          title="{{ .Title }} page"
+        >
+          {{ .Name }}
+          <div class="rippleJS"></div>
+        </a>
+    {{ end }}
+  </section>
 
   <!-- SOCIAL MEDIA -->
-  <section class="sidenav-icons flex justify-around max-w-full">
+  <section class="sidenav-icons flex justify-around max-w-full sp:justify-center sm:justify-center md:justify-center">
     <img src="{{ (resources.Get "svgs/solid/envelope.svg").Permalink }}" alt="envelope-icon">
     <a href="https://github.com/diegosanchezp/" title="Github Account" target="_blank">
       <img src="{{ (resources.Get "svgs/brands/github.svg").Permalink }}" alt="github-icon">

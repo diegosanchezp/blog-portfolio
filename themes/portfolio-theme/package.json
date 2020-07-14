@@ -7,7 +7,7 @@
   "author": "dirkolbrich <github@dirkolbrich.de>",
   "license": "MIT",
   "scripts": {
-    "dev:hugo": "env MODE=\"development\" hugo server --disableFastRender"
+    "dev:hugo": "env MODE=\"development\" hugo server --disableFastRender --bind 0.0.0.0"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.2.0",

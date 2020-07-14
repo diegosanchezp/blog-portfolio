@@ -1,6 +1,6 @@
 {{ define "main" }} 
 
-<article class="place-self px-2">
+<article class="place-self sp:m-2 sm:m-2">
   <section class="flex">
     <div class="mb-0 mt-0">
       <p>
@@ -12,12 +12,12 @@
         the UCV.
       </p>
     </div>
-    <img class="w-32" src="/Images/UCVLogo.png" alt="UCV Logo">
+    <img class="sm:self-center sp:w-20 sp:h-20 sp:self-center w-32" src="/Images/UCVLogo.png" alt="UCV Logo">
   </section>
 
   <div class="center-horizontal">
 		<a class="text-center" href="http://www.computacion.ciens.ucv.ve/pensum2k/docs/Plan%20de%20Estudios-aprobadoCU%20Revisado20-01-2005.pdf" target="_blank">
-    {{ partial "button.html" (dict "content" "See academic curriculum") }}
+    {{ partial "button.html" (dict "content" "See academic curriculum" "class" "my-2") }}
     </a>
   </div>
 </article>
