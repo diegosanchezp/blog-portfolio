@@ -4,9 +4,14 @@
 }
 
 /*Grid Item utils*/
+
 .place-self{
   align-self: center; 
   justify-self: center;
+}
+
+@responsive{
+ @apply place-self
 }
 
 /*Hr utils*/
@@ -14,9 +19,17 @@
   border-top-color: var(--color-text-default);
 }
 
+/*Anchor utils*/
 .highlight-a{
   background-color: var(--color-primary);
   border-radius: 3px;
   padding: 3px;
   color: var(--color-secondary);
+}
+
+/*Block utils*/
+@responsive{
+  .center-block-hor{
+    margin: 0 auto
+  }
 }

@@ -2,7 +2,8 @@
 <html>
   <body>
     {{ partial "head.html" . }}
-    <main class="lg:grid xl:grid md:flex md:flex-col sm:flex sm:flex-col">
+    <!-- md:flex md:flex-col sm:flex sm:flex-col -->
+    <main class="grid body-main">
       {{ partial "nav.html" .}}
       {{ block "main" . }}{{ end }}
     </main>

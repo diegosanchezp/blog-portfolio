@@ -8,6 +8,19 @@ hr{
   border-top-color: var(--color-lightwhite);
 }
 
-main{
+.body-main{
   grid-template-columns: 243px auto;
 }
+
+@screen sm{
+  .body-main{
+    grid-template-columns: auto;
+  }
+}
+
+@screen md{
+  .body-main{
+    grid-template-columns: 200px auto;
+  }
+}
+

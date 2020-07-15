@@ -1,13 +1,10 @@
 .sidenav{
   background-color: var(--color-secondary);
-  min-width: 243px;
 
   /*Hide Scrollbars But Keep Functionality*/
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
-
-
 
 /*Hide Scrollbars But Keep Functionality*/
 .sidenav::-webkit-scrollbar{
@@ -20,19 +17,10 @@
   filter: invert(96%) sepia(100%) saturate(18%) hue-rotate(326deg) brightness(106%) contrast(104%);
 }
 
-@screen sm {
-  .sidenav-icons img{
-    margin: 0 10px;
-  } 
+/*Current page selected*/
+.sidebar-nav-item-active{
+  box-shadow: 0px 0px 20px var(--color-lightwhite);
 }
-
-@screen sp{
-  .sidenav-icons img{
-    margin: 0 10px;
-    min-width: 25px;
-  }
-}
-
 @screen sm{
   .sidenav-icons img{
     margin: 0 10px;
@@ -40,6 +28,12 @@
   } 
 }
 
+@screen md{
+  .sidenav-icons img{
+    margin: 0 10px;
+    min-width: 25px;
+  } 
+}
 
 @screen md {
   .sidenav-profile div{

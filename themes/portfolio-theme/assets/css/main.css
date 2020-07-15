@@ -17,7 +17,7 @@
 @import 'assets/css/components/project-card';
 @import 'assets/css/components/dialog';
 
-@import 'assets/css/utils/utils';
 /* Tailwind's utility classes - generated based on config file */
 @import "node_modules/tailwindcss/utilities";
-
+/*Add any custom utilities to the end of your CSS file to avoid specificity issues */
+@import 'assets/css/utils/utils';

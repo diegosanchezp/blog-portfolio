@@ -1,14 +1,10 @@
 {{ define "main" }}
-<!-- TODO: 
-  - This will be the project card bro 
-  - Make a project card partial 
-  - Include article
--->
 <article class="m-2">
   <h1 class="text-5xl">Work projects</h1>
   <hr class="hr-white mb-4">
   <p class="my-2">Projects that I've been employed</p>
-  <div class="grid gap-3 lg:grid-cols-3 xl:grid-cols-3 sm:grid-cols-2 md:grid-cols-2 md:gap-2 sm:gap-2 sp:gap-1 sp:grid-cols-1">
+  {{ $responsiveGrid := "grid gap-3 lg:grid-cols-3 xl:grid-cols-3 md:grid-cols-2 md:gap-2 sm:gap-2 sm:grid-cols-none" }} 
+  <div class="{{ print $responsiveGrid }}">
   {{ range .Data.Pages }}
     {{ if eq .Params.type "WORK-PROJECT" }} 
       {{ partial "project-card.html" .Params }}    
@@ -18,7 +14,7 @@
   <h1 class="text-5xl">Miniprojects</h1>
   <hr class="hr-white mb-4">
   <p class="my-2">Projects done to get freecodecamp certifications</p>
-  <div class="grid gap-3 lg:grid-cols-3 xl:grid-cols-3 sm:grid-cols-2 md:grid-cols-2 md:gap-2 sm:gap-2 sp:gap-2 sp:grid-cols-1">
+  <div class="{{ print $responsiveGrid }}">
   {{ range .Data.Pages }}
     {{ if eq .Params.type "MINI-PROJECT" }} 
       {{ partial "project-card.html" .Params }}    

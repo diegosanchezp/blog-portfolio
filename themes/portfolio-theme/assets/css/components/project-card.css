@@ -1,6 +1,4 @@
 .project-card {
-  background-color: var(--color-secondary);
-  border: 1px solid var(--color-lightwhite);
   box-shadow: 0px 0px 5px rgba(242, 242, 242, 0.5);
 }
 
