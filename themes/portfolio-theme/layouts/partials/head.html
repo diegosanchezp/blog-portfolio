@@ -33,7 +33,10 @@
     {{ end }}
 
     <!-- JS -->
+
     {{ $ripple := resources.Get "js/ripple.min.js" }}
     <script defer src="{{$ripple.Permalink}}"></script>
     
+    <!-- Dialog: todo load conditonally if page == homepage -->
+    <script defer src="{{(resources.Get "js/dialog.js").Permalink}}"></script>
 </head>

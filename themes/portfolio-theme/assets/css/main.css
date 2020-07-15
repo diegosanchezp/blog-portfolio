@@ -15,6 +15,7 @@
 @import 'assets/css/components/sidenav';
 @import 'assets/css/components/button';
 @import 'assets/css/components/project-card';
+@import 'assets/css/components/dialog';
 
 @import 'assets/css/utils/utils';
 /* Tailwind's utility classes - generated based on config file */

@@ -33,7 +33,7 @@
 
   <!-- SOCIAL MEDIA -->
   <section class="sidenav-icons flex justify-around max-w-full sp:justify-center sm:justify-center md:justify-center">
-    <img src="{{ (resources.Get "svgs/solid/envelope.svg").Permalink }}" alt="envelope-icon">
+    <img id="envelope" src="{{ (resources.Get "svgs/solid/envelope.svg").Permalink }}" alt="envelope-icon">
     <a href="https://github.com/diegosanchezp/" title="Github Account" target="_blank">
       <img src="{{ (resources.Get "svgs/brands/github.svg").Permalink }}" alt="github-icon">
     </a>
@@ -41,4 +41,7 @@
       <img src="{{ (resources.Get "svgs/brands/linkedin.svg").Permalink }}" alt="linkedin-icon">
     </a>
   </section>
+
+  <!-- DIALOG -->
+  {{ partial "dialog.html" . }}
 </aside>
