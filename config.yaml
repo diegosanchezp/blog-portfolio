@@ -1,0 +1,24 @@
+baseURL : 'http://example.org/'
+theme : 'portfolio-theme'
+
+module:
+  mounts:
+  - source : './themes/portfolio-theme/node_modules/vanilla-ripplejs/ripple.min.js'
+    target : 'assets/js/ripple.min.js'
+  - source : './themes/portfolio-theme/node_modules/@fortawesome/fontawesome-free/svgs'
+    target : 'assets/svgs/' 
+
+DefaultContentLanguage : 'en'
+copyright : 'Everything is mine bro'
+
+languages:
+  en:
+    title : 'Diego Sánchez Portfolio'   
+    languageName : 'English'
+    languageCode : 'en-us'
+    weight : 1
+  es:
+    title : 'Portafolio de Diego Sánchez'   
+    languageName : 'Español'
+    languageCode : 'es'
+    weight : 2
