@@ -2,7 +2,7 @@
 title: 'Pomodoro Tracker'
 urllink: 'https://diegosanchezp.github.io/pomodoro-timer'
 img: 'pomodo-timer-screenshot.png'
-description: 'Simple Pomodoro Tracker for working'
+description: 'Temporizador de pomodoro para trabajo o estudio'
 tags: ['ReactJs']
 type: 'MINI-PROJECT'
 ---
