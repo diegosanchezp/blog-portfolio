@@ -1,4 +1,5 @@
-+++
-title = "Proyectos"
-menu = "main"
-+++
+---
+title: "Proyectos"
+menu: "main"
+url: '/es/proyectos'
+---

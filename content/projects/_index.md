@@ -1,4 +1,4 @@
-+++
-title = "Projects"
-menu = "main"
-+++
+---
+title: "Projects"
+menu: "main"
+---
