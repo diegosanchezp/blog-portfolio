@@ -1,18 +1,12 @@
 {{ define "main"}}
 <article class="home-page p-2 text-center">
-  <h1>Hi I'm Diego !</h1>
-  <p>
-  A computer science student from 🇻🇪, that likes to make webpages with the 
-  latest technologies.
-  </p>
+  <h1>{{ T "hello" }}</h1>
+  <p>{{ T "techs" }}</p>
   <p>Angular2, Reactjs, Svelte, Nodejs, PostgreSQL,...</p>
   <img id="tech-stack" alt="Tech stack" src="/Images/TechStack.png">
-  <p>
-  I like to develop the two ends of the web, the user interface “front end” and the 
-  bussiness server logic “back end”.
-  </p>
-  <p>If you are interested to work me with me, you can</p>
+  <p>{{ T "iLikeTo" | safeHTML}}</p>
+  <p>{{ T "toWork" }}</p>
 
-  {{ partial "button.html" (dict "content" "Contact Me" "id" "contact-me-home" "class" "my-2") }}
+  {{ partial "button.html" (dict "content" (T "contactMe") "id" "contact-me-home" "class" "my-2") }}
 </article>
 {{ end }}

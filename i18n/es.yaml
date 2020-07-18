@@ -1,0 +1,36 @@
+# Homepage translation (layouts/index.html)
+- id: hello
+  translation: "Hola! soy Diego"
+- id: techs
+  translation: "Un estudiante de computación de Venezuela 🇻🇪 que le gusta crear páginas web con las últimas tecnologias"
+- id: iLikeTo
+  translation: "Me gusta desarrollar el <b>front end</b>, o lo que es la interfaz de usuario y el <b>backend</b> o la lógica de negocio."
+- id: toWork
+  translation: "Si estas interesado en trabajar conmigo, puedes"
+- id: contactMe
+  translation: "Contactarme"
+
+# Academics translation (layouts/_default/projects.html)
+- id: whoIsDiego1 
+  translation: "Diego es estudiante de computación en la Universidad Central de Venezuela, actualmente se encuentra cursando el sexto semestre de la carrera."
+- id: whoIsDiego2 
+  translation: "Tambíen es <b>preparador</b> de la materia del cuarto semestre <b>Probabilidad y Estadística</b> en la UCV"
+- id: seeCurriculum
+  translation: "Ver pensum academico"
+
+# Projects translation (layouts/projects/list.html)
+
+- id: miniProjects 
+  translation: "Miniproyectos"
+- id: miniProjectsDesc
+  translation: "Proyectos hechos para obtener las certifications de freecodecamp"
+- id: workProjects
+  translation: "Proyectos de trabajo"
+- id: workProjectsDesc
+  translation: "Proyectos en los que me han contratado para trabajar"
+- id: others 
+  translation: "Otros"
+- id: seeMy 
+  translation: "Vea mi perfil de "
+- id: profile
+  translation: " "

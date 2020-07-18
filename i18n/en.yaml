@@ -1,0 +1,42 @@
+# Homepage translation (layouts/index.html)
+
+- id: hello
+  translation: "Hi, I'm Diego !"
+- id: techs
+  translation: " A computer science student from 🇻🇪, that likes to make webpages with the latest technologies."
+- id: iLikeTo
+  translation: "
+  I like to develop the two ends of the web, the user interface <b>front end</b> and the bussiness server logic or <b>back end</b>"
+- id: toWork
+  translation: "If you are interested to work me with me, you can"
+- id: contactMe
+  translation: "Contact Me"
+
+# Academics translation (layouts/_default/projects.html)
+#
+- id: whoIsDiego1 
+  translation: "Diego is a computer science <b>student </b>at the Central University of Venezuela (UCV), he's currently at the 6th semester."
+- id: whoIsDiego2 
+  translation: "He is also a <b>practical instructor</b> teaching Probability and Statistics in the UCV."
+- id: seeCurriculum
+  translation: "See academic curriculum"
+
+# Projects translation (layouts/projects/list.html)
+
+- id: miniProjects 
+  translation: "Miniprojects"
+- id: miniProjectsDesc
+  translation: "Projects done to get freecodecamp certifications"
+- id: workProjects
+  translation: "Work projects"
+- id: workProjectsDesc
+  translation: "Projects that I've been employed"
+- id: others 
+  translation: "Others"
+- id: seeMy 
+  translation: "See my"
+- id: profile
+  translation: "profile"
+
+# - id: 
+#   translation: ""

@@ -5,10 +5,10 @@
     <!-- Add Custom Headers -->
 
     {{ if eq .Key "MINI-PROJECT"}} 
-      {{ partial "project-type-header.html" (dict "title" "Miniprojects" "description" "Projects done to get freecodecamp certifications")}}
+      {{ partial "project-type-header.html" (dict "title" (T "miniProjects") "description" (T "miniProjectsDesc"))}}
 
     {{ else if eq .Key "WORK-PROJECT" }}
-      {{ partial "project-type-header.html" (dict "title" "Work projects" "description" "Projects that I've been employed")}}
+      {{ partial "project-type-header.html" (dict "title" (T "workProjects") "description" (T "workProjectsDesc"))}}
 
     {{ else }}
       {{ partial "project-type-header.html" (dict "title" .Key) }}
@@ -24,11 +24,11 @@
   {{ end }}
 
   <!-- Harcoded project types -->
-  <h1 class="text-5xl">Others</h1>
+  <h1 class="text-5xl">{{ T "others" }}</h1>
   <hr class="hr-white mb-4">
   <p>
-    See my
+    {{ T "seeMy" }}
     <a href="https://codepen.io/diegosanchezp_/" class="highlight-a my-2 font-bold" target="_blank">codepen</a>
-    profile
+    {{ T "profile" }}
   </p>
 {{ end }}

@@ -3,20 +3,14 @@
 <article class="place-self m-2 sm:h-screen">
   <section class="sm:place-self flex sm:justify-center">
     <div class="mb-0 mt-0">
-      <p>
-        Diego is a computer science <b>student </b>at the Central University of Venezuela (UCV), 
-        he’s currently at the 6th semester.
-      </p>
-      <p>
-        He is also a <b>practical instructor</b> teaching Probability and Statistics in 
-        the UCV.
-      </p>
+      <p>{{ T "whoIsDiego1" | safeHTML }}</p>
+      <p>{{ T "whoIsDiego2" | safeHTML }}</p>
     </div>
     <img class="sm:self-center sm:w-20 sm:h-20 sm:self-center w-32" src="/Images/UCVLogo.png" alt="UCV Logo">
   </section>
   <div class="center-horizontal">
 		<a class="sm:place-self text-center" href="http://www.computacion.ciens.ucv.ve/pensum2k/docs/Plan%20de%20Estudios-aprobadoCU%20Revisado20-01-2005.pdf" target="_blank">
-    {{ partial "button.html" (dict "content" "See academic curriculum" "class" "my-2") }}
+    {{ partial "button.html" (dict "content" (T "seeCurriculum") "class" "my-2") }}
     </a>
   </div>
 </article>

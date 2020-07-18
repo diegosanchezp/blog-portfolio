@@ -40,10 +40,11 @@
   </section>
 
   <!-- List Available languages -->
-  {{ range .Translations }}
-    <a class="my-2 text-center" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+  {{ if .IsTranslated }}
+    {{ range .Translations }}
+      <a class="my-2 text-center" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+    {{ end }}
   {{ end }}
-
   <!-- DIALOG -->
   {{ partial "dialog.html" . }}
 </aside>
