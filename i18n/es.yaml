@@ -2,7 +2,7 @@
 - id: hello
   translation: "Hola! soy Diego"
 - id: techs
-  translation: "Un estudiante de computación de Venezuela 🇻🇪 que le gusta crear páginas web con las últimas tecnologias"
+  translation: "Un estudiante de computación en Venezuela 🇻🇪 que le gusta crear páginas web con las últimas tecnologías"
 - id: iLikeTo
   translation: "Me gusta desarrollar el <b>front end</b>, o lo que es la interfaz de usuario y el <b>backend</b> o la lógica de negocio."
 - id: toWork
@@ -23,7 +23,7 @@
 - id: miniProjects 
   translation: "Miniproyectos"
 - id: miniProjectsDesc
-  translation: "Proyectos hechos para obtener las certifications de freecodecamp"
+  translation: "Proyectos hechos para obtener las certificaciones de freecodecamp"
 - id: workProjects
   translation: "Proyectos de trabajo"
 - id: workProjectsDesc
@@ -34,3 +34,13 @@
   translation: "Vea mi perfil de "
 - id: profile
   translation: " "
+
+# Nav partial translation (/layouts/partials/nav.html)
+
+- id: occupation 
+  translation: "Desarrollador Web Full Stack"
+
+# Dialog partial translation (/layouts/partials/dialog.html)
+
+- id: sendEmail 
+  translation: "Envíame un email al siguiente correo"

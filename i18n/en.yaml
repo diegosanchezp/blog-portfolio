@@ -38,5 +38,15 @@
 - id: profile
   translation: "profile"
 
+# Nav partial translation (/layouts/partials/nav.html)
+
+- id: occupation 
+  translation: "Full Stack Web Developer"
+
+# Dialog partial translation (/layouts/partials/dialog.html)
+
+- id: sendEmail 
+  translation: "Send me an email at"
+
 # - id: 
 #   translation: ""
