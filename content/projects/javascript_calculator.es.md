@@ -4,6 +4,6 @@ url: 'diegosanchezp.github.io/javascript-calculator'
 img: 'javascript-calculator-screenshot.png'
 description: 'Una calculadora simple'
 urllink: 'https://diegosanchezp.github.io/simple-react-markdown-previewer'
-tags: ['ReactJs']
+techs: ['ReactJs']
 type: 'MINI-PROJECT'
 ---
