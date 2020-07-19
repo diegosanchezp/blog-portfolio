@@ -28,22 +28,31 @@
 
     {{- $styles := resources.Get "css/main.css" | postCSS (dict "config" "./assets/css/postcss.config.js") -}}
 
+    <!-- JS -->
+    <!-- Todo: Bundle this two guys together for production -->
+    {{ $ripple := resources.Get "js/ripple.min.js" }}
+    {{ $dialog := resources.Get "js/dialog.js" }}
+
     {{ if getenv "MODE" | eq .Site.Data.enval.dev }}
 
+      <!-- CSS -->
       <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
 
+      <!-- JS -->
+      <script defer src="{{$ripple.Permalink}}"></script>
+      <script defer src="{{$dialog.Permalink}}"></script>
     {{else if getenv "MODE" | eq .Site.Data.enval.prod }}
 
+      <!-- CSS -->
       {{- $styles := $styles| minify | fingerprint | resources.PostProcess -}}
       <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
 
+      <!-- JS -->
+      {{ $jsbundle := slice $ripple $dialog | resources.Concat "js/bundle.js" | minify | fingerprint }}
+      <!-- Load -->
+      <script defer src="{{$jsbundle.Permalink}}"></script>
     {{ end }}
 
-    <!-- JS -->
 
-    <!-- Todo: Bundle this two guys together for production -->
-    {{ $ripple := resources.Get "js/ripple.min.js" }}
-    <script defer src="{{$ripple.Permalink}}"></script>
     
-    <script defer src="{{(resources.Get "js/dialog.js").Permalink}}"></script>
 </head>
