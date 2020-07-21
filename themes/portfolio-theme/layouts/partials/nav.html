@@ -1,9 +1,9 @@
 <!-- Styles: components/sidenav.css -->
-<aside class="sidenav flex flex-col p-2 md:h-screen lg:xl:h-screen xl:h-screen border border-solid border-lightwhite overflow-y-auto">
+<aside class="sidenav flex flex-col p-2 md:h-full lg:h-full xl:h-full border border-solid border-lightwhite overflow-y-auto sm:overflow-x-auto">
 
   <!-- PROFILE -->
   <section class="sidenav-profile flex flex-col sm:flex-row  justify-center sm:justify-center">
-    <img class="lg:w-full sm:w-16 sm:h-16 sm:rounded-sm md:w-24  xl:mb-2 lg:mb-2 md:center-block-hor" src="/Images/ProfilePic.jpg" alt="Profile Picture"> 
+    <img class="lg:w-full sm:w-16 sm:h-16 sm:rounded-sm md:w-auto  xl:mb-2 lg:mb-2 md:center-block-hor" src="/Images/ProfilePic.jpg" alt="Profile Picture"> 
     <div class="self-center sm:self-center md:self-center md:mt-2">
       <p class="text-center uppercase text-primary">Diego Sánchez</p>
       <p class="ml-2 sm:ml-2 md:ml-2 text-center">{{ T "occupation" }}</p>
@@ -29,22 +29,26 @@
   </section>
 
   <!-- SOCIAL MEDIA -->
-  <section class="sidenav-icons flex justify-around max-w-full justify-center sm:justify-center md:justify-center">
-    <img id="envelope" src="{{ (resources.Get "svgs/solid/envelope.svg").Permalink }}" alt="envelope-icon">
-    <a href="https://github.com/diegosanchezp/" title="Github Account" target="_blank">
-      <img src="{{ (resources.Get "svgs/brands/github.svg").Permalink }}" alt="github-icon">
-    </a>
-    <a href="https://github.com/diegosanchezp/" title="LinkedIn Profile" target="_blank">
-      <img src="{{ (resources.Get "svgs/brands/linkedin.svg").Permalink }}" alt="linkedin-icon">
-    </a>
-  </section>
+  <div class="sm:flex sm:justify-center">
+    <section class="sidenav-icons flex justify-around max-w-full justify-center sm:justify-center md:justify-center">
+      <img id="envelope" src="{{ (resources.Get "svgs/solid/envelope.svg").Permalink }}" alt="envelope-icon">
+      <a href="https://github.com/diegosanchezp/" title="Github Account" target="_blank">
+        <img src="{{ (resources.Get "svgs/brands/github.svg").Permalink }}" alt="github-icon">
+      </a>
+      <a href="https://github.com/diegosanchezp/" title="LinkedIn Profile" target="_blank">
+        <img src="{{ (resources.Get "svgs/brands/linkedin.svg").Permalink }}" alt="linkedin-icon">
+      </a>
+    </section>
 
-  <!-- List Available languages -->
-  {{ if .IsTranslated }}
-    {{ range .Translations }}
-      <a class="my-2 text-center" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
-    {{ end }}
-  {{ end }}
+    <!-- List Available languages -->
+    <section class="sm:ml-3">
+      {{ if .IsTranslated }}
+        {{ range .Translations }}
+          <a class="my-2 sm:m-0 sm:inline block text-center" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+        {{ end }}
+      {{ end }}
+    </section>
+  </div>
   <!-- DIALOG -->
   {{ partial "dialog.html" . }}
 </aside>

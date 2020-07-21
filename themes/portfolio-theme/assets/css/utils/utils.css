@@ -33,3 +33,9 @@
     margin: 0 auto
   }
 }
+
+/*width utils*/
+.w-fit-content{
+  width: max-content;
+}
+

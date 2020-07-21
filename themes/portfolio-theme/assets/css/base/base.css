@@ -10,11 +10,13 @@ hr{
 
 .body-main{
   grid-template-columns: 243px auto;
+  grid-template-rows: minmax(auto, 100%);
 }
 
 @screen sm{
   .body-main{
     grid-template-columns: auto;
+    grid-template-rows: auto;
   }
 }
 

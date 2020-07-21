@@ -4,6 +4,7 @@
   /*Hide Scrollbars But Keep Functionality*/
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+  
 }
 
 /*Hide Scrollbars But Keep Functionality*/
@@ -21,11 +22,15 @@
 .sidebar-nav-item-active{
   box-shadow: 0px 0px 20px var(--color-lightwhite);
 }
+
 @screen sm{
   .sidenav-icons img{
     margin: 0 10px;
     min-width: 25px;
-  } 
+  }
+  .sidenav{
+    max-height: 205px;
+  }
 }
 
 @screen md{
@@ -33,10 +38,9 @@
     margin: 0 10px;
     min-width: 25px;
   } 
-}
 
-@screen md {
   .sidenav-profile div{
     justify-self: center;
   }
 }
+

@@ -1,12 +1,13 @@
 {{ define "main"}}
-<article class="home-page p-2 text-center">
+<article class="h-screen sm:block flex flex-col justify-center home-page p-2 text-center">
   <h1>{{ T "hello" }}</h1>
   <p>{{ T "techs" }}</p>
   <p>Angular2, Reactjs, Svelte, Nodejs, PostgreSQL,...</p>
   <img id="tech-stack" alt="Tech stack" src="/Images/TechStack.png">
   <p>{{ T "iLikeTo" | safeHTML}}</p>
   <p>{{ T "toWork" }}</p>
-
-  {{ partial "button.html" (dict "content" (T "contactMe") "id" "contact-me-home" "class" "my-2") }}
+  <div class="center-horizontal ">
+  {{ partial "button.html" (dict "content" (T "contactMe") "id" "contact-me-home" "class" "my-2 w-fit-content") }}
+  </div>
 </article>
 {{ end }}
