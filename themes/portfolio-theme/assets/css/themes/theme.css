@@ -6,4 +6,6 @@
   --color-bg: black;
   --color-text-default: white;
   --color-lightwhite: hsla(0,0%,100%,.12);
+  --sidenav-sm-height: 205px;
+  --sidenav-max-width: 243px;
 }

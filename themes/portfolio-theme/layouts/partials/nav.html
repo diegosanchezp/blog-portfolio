@@ -1,6 +1,5 @@
 <!-- Styles: components/sidenav.css -->
-<aside class="sidenav flex flex-col p-2 md:h-full lg:h-full xl:h-full border border-solid border-lightwhite overflow-y-auto sm:overflow-x-auto">
-
+<aside id="sidenav" class="sidenav flex flex-col p-2 md:h-full lg:h-full xl:h-full border border-solid border-lightwhite overflow-y-auto sm:overflow-x-auto">
   <!-- PROFILE -->
   <section class="sidenav-profile flex flex-col sm:flex-row  justify-center sm:justify-center">
     <img class="lg:w-full sm:w-16 sm:h-16 sm:rounded-sm md:w-auto  xl:mb-2 lg:mb-2 md:center-block-hor" src="/Images/ProfilePic.jpg" alt="Profile Picture"> 
@@ -31,12 +30,12 @@
   <!-- SOCIAL MEDIA -->
   <div class="sm:flex sm:justify-center">
     <section class="sidenav-icons flex justify-around max-w-full justify-center sm:justify-center md:justify-center">
-      <img id="envelope" src="{{ (resources.Get "svgs/solid/envelope.svg").Permalink }}" alt="envelope-icon">
+      <img id="envelope" src="{{ (resources.Get "svgs/solid/envelope.svg").RelPermalink }}" alt="envelope-icon">
       <a href="https://github.com/diegosanchezp/" title="Github Account" target="_blank">
-        <img src="{{ (resources.Get "svgs/brands/github.svg").Permalink }}" alt="github-icon">
+        <img src="{{ (resources.Get "svgs/brands/github.svg").RelPermalink }}" alt="github-icon">
       </a>
       <a href="https://github.com/diegosanchezp/" title="LinkedIn Profile" target="_blank">
-        <img src="{{ (resources.Get "svgs/brands/linkedin.svg").Permalink }}" alt="linkedin-icon">
+        <img src="{{ (resources.Get "svgs/brands/linkedin.svg").RelPermalink }}" alt="linkedin-icon">
       </a>
     </section>
 

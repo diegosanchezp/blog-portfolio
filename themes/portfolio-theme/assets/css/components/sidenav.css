@@ -4,7 +4,6 @@
   /*Hide Scrollbars But Keep Functionality*/
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
-  
 }
 
 /*Hide Scrollbars But Keep Functionality*/
@@ -29,7 +28,7 @@
     min-width: 25px;
   }
   .sidenav{
-    max-height: 205px;
+    max-height: var(--sidenav-sm-height);
   }
 }
 
@@ -43,4 +42,3 @@
     justify-self: center;
   }
 }
-
