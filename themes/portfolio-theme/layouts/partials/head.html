@@ -1,58 +1,52 @@
-<head>
-    <!-- Website metadata -->
+<!-- Website metadata -->
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>
-    {{- .Title }} - {{ .Site.Title -}}
-    </title>
-    {{- if .Description }}
-    <meta name="description" content="{{ .Description }}" />
-    {{ end -}}
-    {{- if .Keywords }}
-    <meta name="keywords" content="{{ delimit .Keywords "," }}" />
-    {{ end -}}
-    {{- if .Params.Author }}
-    <meta name="author" content="{{ .Params.Author}}" />
-    {{ end -}}
-    {{ hugo.Generator }}
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>
+  {{- .Title }} - {{ .Site.Title -}}
+</title>
+{{- if .Description }}
+<meta name="description" content="{{ .Description }}" />
+{{ end -}}
+{{- if .Keywords }}
+  <meta name="keywords" content="{{ delimit .Keywords "," }}" />
+{{ end -}}
+  {{- if .Params.Author }}
+  <meta name="author" content="{{ .Params.Author}}" />
+  {{ end -}}
+{{ hugo.Generator }}
 
-    <!-- TRANSLATION STUFF -->
-    {{ if .IsTranslated }}
-      {{ range .Translations }}
-      <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" title="{{ .Language.LanguageName }}">
-      {{ end }}
-    {{ end }}
+<!-- TRANSLATION STUFF -->
+{{ if .IsTranslated }}
+  {{ range .Translations }}
+  <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" title="{{ .Language.LanguageName }}">
+  {{ end }}
+{{ end }}
 
-    <!-- CSS -->
+<!-- CSS -->
+{{- $styles := resources.Get "css/main.css" | postCSS (dict "config" "./assets/css/postcss.config.js") -}}
 
-    {{- $styles := resources.Get "css/main.css" | postCSS (dict "config" "./assets/css/postcss.config.js") -}}
+<!-- JS -->
+<!-- Todo: Bundle this two guys together for production -->
+{{ $ripple := resources.Get "js/ripple.min.js" }}
+{{ $dialog := resources.Get "js/dialog.js" }}
 
-    <!-- JS -->
-    <!-- Todo: Bundle this two guys together for production -->
-    {{ $ripple := resources.Get "js/ripple.min.js" }}
-    {{ $dialog := resources.Get "js/dialog.js" }}
+{{ if getenv "MODE" | eq .Site.Data.enval.dev }}
 
-    {{ if getenv "MODE" | eq .Site.Data.enval.dev }}
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
 
-      <!-- CSS -->
-      <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
+  <!-- JS -->
+  <script defer src="{{$ripple.RelPermalink}}"></script>
+  <script defer src="{{$dialog.RelPermalink}}"></script>
+{{else if getenv "MODE" | eq .Site.Data.enval.prod }}
 
-      <!-- JS -->
-      <script defer src="{{$ripple.Permalink}}"></script>
-      <script defer src="{{$dialog.Permalink}}"></script>
-    {{else if getenv "MODE" | eq .Site.Data.enval.prod }}
+<!-- CSS -->
+  {{- $styles := $styles| minify | fingerprint | resources.PostProcess -}}
+  <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
 
-      <!-- CSS -->
-      {{- $styles := $styles| minify | fingerprint | resources.PostProcess -}}
-      <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
-
-      <!-- JS -->
-      {{ $jsbundle := slice $ripple $dialog | resources.Concat "js/bundle.js" | minify | fingerprint }}
-      <!-- Load -->
-      <script defer src="{{$jsbundle.Permalink}}"></script>
-    {{ end }}
-
-
-    
-</head>
+  <!-- JS -->
+  {{ $jsbundle := slice $ripple $dialog | resources.Concat "js/bundle.js" | minify | fingerprint }}
+  <!-- Load -->
+  <script defer src="{{$jsbundle.RelPermalink}}"></script>
+{{ end }}
