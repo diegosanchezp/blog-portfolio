@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {{ partial "head.html" . }}
+    {{ partial "blog/head.html" . }}
+  </head>
+
+  <body id="blog-body">
+    <!-- Sidenav -->
+    {{ partial "nav.html" .}}
+
+    <!-- "Blog post" the single.html file -->
+    {{ block "blog-content" . }}{{ end }}
+
+  </body>
+
+</html>

@@ -1,0 +1,100 @@
+/* ATENTION: do not @import this file in main.css 
+ * quicknav: only to be displayed on sm, md
+ * */
+@import 'assets/css/pages/blog.single'; 
+
+#blog-body{
+  --quicknav-height: 25px;
+  display: grid;
+  grid-template-areas:
+    "sidenav post-title toc"
+    "sidenav post-content toc"
+  ;
+  grid-template-columns: minmax(auto,var(--sidenav-max-width)) 1fr minmax(100px, 230px);
+  grid-template-rows: auto max-content;
+  column-gap: 10px;
+}
+
+/* Positioning of objects on grid layout */
+
+#sidenav { grid-area: sidenav; }
+
+#post-title { grid-area: post-title; }
+
+#post-content { grid-area: post-content; }
+
+#tableofcontents { grid-area: toc; }
+
+#quick-nav{ grid-area: quick-nav; }
+
+/*tableofcontents related styles*/
+
+#TableOfContents{
+  position: fixed; 
+}
+
+#tableofcontents{
+  width: 100%;
+
+}
+/*quicknav related styles*/
+
+#quick-nav {
+  display: none;
+}
+
+/*styles for sm and md*/
+@media (min-width: 0px) and (max-width: 640px), (min-width: 641px) and (max-width: 768px){
+
+  #quick-nav{
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    color: black;
+    width: 100%;
+  }
+
+  #quick-nav a{
+    margin: 0 10px;
+  }
+
+  #TableOfContents {
+    position: relative;
+  }
+}
+
+@screen sm{
+  #blog-body{
+    grid-template-areas: 
+      "sidenav"
+      "post-title"
+      "toc"
+      "post-content"
+      "quick-nav"
+    ;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(3, max-content) 1fr var(--quicknav-height);
+  } 
+}
+
+@screen md{
+  #blog-body{
+    grid-template-areas: 
+      "sidenav post-title"
+      "sidenav toc"
+      "sidenav post-content"
+      "quick-nav quick-nav"
+    ;
+    grid-template-columns: var(--sidenav-md-width) 1fr;
+    grid-template-rows: repeat(3, auto) var(--quicknav-height);
+  }
+}
+
+@screen lg{
+
+  #blog-body{
+
+    grid-template-columns: var(--sidenav-md-width) 1fr 140px;
+  }
+}

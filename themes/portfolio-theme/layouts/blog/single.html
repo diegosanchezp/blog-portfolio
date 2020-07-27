@@ -1,0 +1,21 @@
+{{ define "blog-content" }}
+  <!-- Note: this elements are children of <body> -->
+
+  <section id="post-title">
+    <h1>{{ .Title }}</h1>
+  </section>
+
+  <main id="post-content">
+    {{ .Content }}
+  </main>
+
+  <aside id="tableofcontents">
+    <b>Table of contents</b>
+    {{ .TableOfContents }}
+  </aside>
+
+  <!-- Quick navigation menu -->
+  {{ partial "blog/quick-nav.html" }} 
+
+{{ end }}
+

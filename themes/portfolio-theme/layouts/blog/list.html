@@ -1,0 +1,12 @@
+{{ define "blog-content" }}
+<section id="blog-content">
+  <p>Yoo wassup ! Welcome to the blog</p>
+  <p>Here are my most recent blogs</p>
+  <!-- Ranges through content/posts/*.md -->
+  {{ range .Pages }}
+    <li>
+      <a href="{{.RelPermalink}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a>
+    </li>
+  {{ end }}
+</section>
+{{ end }}

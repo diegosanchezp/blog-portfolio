@@ -1,0 +1,9 @@
+
+<!-- CSS -->
+{{ $blogStyle := resources.Get "css/pages/blog.css" | postCSS (dict "config" "./assets/css/postcss.config.js") }}
+
+{{ if getenv "MODE" | eq .Site.Data.enval.dev }}
+  <link rel="stylesheet" href="{{ $blogStyle.RelPermalink }}">
+{{else if getenv "MODE" | eq .Site.Data.enval.prod }}
+  <link rel="stylesheet" href="{{ $blogStyle.Permalink }}" integrity="{{ $blogStyle.Data.Integrity }}">
+{{ end }}
