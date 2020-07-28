@@ -1,6 +1,8 @@
 baseURL : 'https://diegosanchezp.github.io/'
 theme : 'portfolio-theme'
 
+paginate: 1
+
 module:
   mounts:
   - source : './themes/portfolio-theme/node_modules/vanilla-ripplejs/ripple.min.js'
@@ -22,3 +24,4 @@ languages:
     languageName : 'Español'
     languageCode : 'es'
     weight : 2
+

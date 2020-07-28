@@ -1,6 +1,7 @@
 ---
 title: "A post that is a test"
 date: 2020-07-21T18:38:41-04:00
+categories: "compscience"
 draft: true
 ---
 

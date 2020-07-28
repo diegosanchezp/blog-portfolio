@@ -1,12 +1,30 @@
 {{ define "blog-content" }}
-<section id="blog-content">
-  <p>Yoo wassup ! Welcome to the blog</p>
-  <p>Here are my most recent blogs</p>
+<main id="post-list">
+  <section class="border border-white border-solid rounded my-2 p-2">
+    <p>Welcome to the blog here you'll find my computer science research, and things related to web page development, below you can find a list of the most recent posts.
+    </p>
+  </section>
+  <!-- TODO: range by date -->
   <!-- Ranges through content/posts/*.md -->
-  {{ range .Pages }}
-    <li>
-      <a href="{{.RelPermalink}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a>
-    </li>
+  <article>
+  {{ range .Paginator.Pages }}
+    
+    <h3><a href="{{.RelPermalink}}">{{.Title}}</a></h3>
+    <p class="mb-2">{{ .PublishDate.Format "January 2, 2006" }}</p>
+
+    <section>
+      {{ .Summary }} 
+    </section>
+
+    <div class="flex justify-end">
+      <a href="{{.RelPermalink}}">
+        {{ partial "button.html" (dict "content" "read more") }}
+      </a>
+    </div>
   {{ end }}
-</section>
+  </article>
+
+  {{ template "_internal/pagination.html" . }}
+
+</main>
 {{ end }}

@@ -43,7 +43,7 @@
     <section class="sm:ml-3">
       {{ if .IsTranslated }}
         {{ range .Translations }}
-          <a class="my-2 sm:m-0 sm:inline block text-center" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+          <a class="my-2 sm:m-0 sm:inline block text-center" href="{{ .RelPermalink }}">{{ .Language.LanguageName }}</a>
         {{ end }}
       {{ end }}
     </section>

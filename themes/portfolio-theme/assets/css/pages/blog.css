@@ -27,25 +27,25 @@
 
 #quick-nav{ grid-area: quick-nav; }
 
+#post-list{
+  grid-area: post-content;
+  grid-column: span 2;
+  padding: 0 15px;
+  grid-row: 1/4;
+}
+
 /*tableofcontents related styles*/
+#TableOfContents{ position: fixed; }
 
-#TableOfContents{
-  position: fixed; 
-}
+#tableofcontents{ width: 100%; }
 
-#tableofcontents{
-  width: 100%;
-
-}
 /*quicknav related styles*/
-
-#quick-nav {
-  display: none;
-}
+#quick-nav { display: none;}
 
 /*styles for sm and md*/
 @media (min-width: 0px) and (max-width: 640px), (min-width: 641px) and (max-width: 768px){
 
+  #blog-body{ column-gap: 0px }
   #quick-nav{
     display: flex;
     justify-content: center;
@@ -55,13 +55,9 @@
     width: 100%;
   }
 
-  #quick-nav a{
-    margin: 0 10px;
-  }
+  #quick-nav a{ margin: 0 10px; }
 
-  #TableOfContents {
-    position: relative;
-  }
+  #TableOfContents { position: relative; }
 }
 
 @screen sm{
@@ -76,6 +72,8 @@
     grid-template-columns: 100%;
     grid-template-rows: repeat(3, max-content) 1fr var(--quicknav-height);
   } 
+
+  #post-list{ grid-row: 2/4;}
 }
 
 @screen md{
@@ -92,9 +90,21 @@
 }
 
 @screen lg{
-
   #blog-body{
-
     grid-template-columns: var(--sidenav-md-width) 1fr 140px;
   }
+}
+
+/*Pagination*/
+.pagination{
+  display: flex;
+  justify-content: center;
+}
+
+.pagination .active{
+  @apply text-primary;
+}
+
+.pagination .page-link {
+  margin: 0 5px;
 }
