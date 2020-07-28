@@ -16,7 +16,15 @@ h6{ @apply text-xl; }
 hr{
   border-top-color: var(--color-lightwhite);
 }
+::-moz-selection { /* Code for Firefox */
+  color: black;
+  background: var(--color-primary);
+}
 
+::selection {
+  color: black;
+  background: var(--color-primary);
+}
 .body-main{
   grid-template-columns: 243px auto;
   grid-template-rows: minmax(auto, 100%);
