@@ -1,11 +1,22 @@
 {{ define "blog-content" }}
-  <!-- Note: this elements are children of <body> -->
+  <!-- Note: this elements are direct children of <body> -->
 
-  <section id="post-title">
+  <section id="post-title" class="smmd:p-2">
     <h1>{{ .Title }}</h1>
+    <!-- List blog categories -->
+    <div class="flex">
+      {{ $class := "border bord-white p-1 font-bold capitalize border-solid mr-2" }}
+      {{ range $elem_index,$_ := .GetTerms "categories" }}
+        {{ if eq $elem_index 0 }}
+        <a href="{{ .RelPermalink }}" class="{{$class}}">{{ .LinkTitle }}</a>
+        {{ else }}
+        <a href="{{ .RelPermalink }}" class="{{$class}}">{{ .LinkTitle }}</a>
+        {{ end }}
+      {{ end }}
+    </div>
   </section>
 
-  <main id="post-content">
+  <main id="post-content" class="smmd:p-2">
     {{ .Content }}
   </main>
 

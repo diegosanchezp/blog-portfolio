@@ -2,6 +2,7 @@
  * quicknav: only to be displayed on sm, md
  * */
 @import 'assets/css/pages/blog.single'; 
+@import 'assets/css/pages/blog.list'; /*Landing page for blog*/
 
 #blog-body{
   --quicknav-height: 25px;
@@ -30,7 +31,6 @@
 #post-list{
   grid-area: post-content;
   grid-column: span 2;
-  padding: 0 15px;
   grid-row: 1/4;
 }
 
@@ -95,16 +95,3 @@
   }
 }
 
-/*Pagination*/
-.pagination{
-  display: flex;
-  justify-content: center;
-}
-
-.pagination .active{
-  @apply text-primary;
-}
-
-.pagination .page-link {
-  margin: 0 5px;
-}

@@ -1,0 +1,13 @@
+{{ define "main" }}
+<main class="px-2">
+  <h1 class="border-white"><span class="capitalize">{{ .Data.Singular }}:</span> {{  .Title }}</h1>
+  <a class="highlight-a" href="{{ "/categories/" | relLangURL}}">See other blog {{ .Data.Plural }}</a>
+  <hr class="my-2">
+  <!-- List out all the posts -->
+  {{ range .Data.Pages }}  
+    {{ partial "blog/article.html" .}}
+  {{end}}
+
+  {{ template "_internal/pagination.html" . }}
+</main>  
+{{ end }}

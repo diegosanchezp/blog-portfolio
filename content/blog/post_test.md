@@ -1,13 +1,36 @@
 ---
 title: "A post that is a test"
 date: 2020-07-21T18:38:41-04:00
-categories: "compscience"
+categories: ["compscience"]
 draft: true
 ---
 
 ## Welcome
+[Text](https://www.gohugo.io "Title")
+Lorem `ipsum` dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci sagittis eu volutpat odio facilisis mauris sit. Consectetur adipiscing elit duis tristique sollicitudin nibh. Mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien. Rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar. Aliquam sem et tortor consequat. Duis convallis convallis tellus id interdum. Purus sit amet luctus venenatis lectus magna. A condimentum vitae sapien pellentesque habitant morbi tristique senectus. Lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi. Id leo in vitae turpis massa sed elementum tempus.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci sagittis eu volutpat odio facilisis mauris sit. Consectetur adipiscing elit duis tristique sollicitudin nibh. Mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien. Rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar. Aliquam sem et tortor consequat. Duis convallis convallis tellus id interdum. Purus sit amet luctus venenatis lectus magna. A condimentum vitae sapien pellentesque habitant morbi tristique senectus. Lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi. Id leo in vitae turpis massa sed elementum tempus.
+{{< highlight go "linenos=table,hl_lines=8 15-17,linenostart=199,style=api" >}}
+  // GetTitleFunc returns a func that can be used to transform a string to
+  // title case.
+  //
+  // The supported styles are
+  //
+  // - "Go" (strings.Title)
+  // - "AP" (see https://www.apstylebook.com/)
+  // - "Chicago" (see https://www.chicagomanualofstyle.org/home.html)
+  //
+  // If an unknown or empty style is provided, AP style is what you get.
+  func GetTitleFunc(style string) func(s string) string {
+    switch strings.ToLower(style) {
+    case "go":
+      return strings.Title
+    case "chicago":
+      return transform.NewTitleConverter(transform.ChicagoStyle)
+    default:
+      return transform.NewTitleConverter(transform.APStyle)
+    }
+  }
+{{< / highlight >}}
 
 Ultricies mi eget mauris pharetra et ultrices neque ornare aenean. Sed turpis tincidunt id aliquet. Aenean et tortor at risus viverra adipiscing at in tellus. Morbi tristique senectus et netus et malesuada fames ac. Sollicitudin nibh sit amet commodo nulla facilisi. Tempor commodo ullamcorper a lacus. Ultricies mi quis hendrerit dolor magna eget est. Lectus vestibulum mattis ullamcorper velit sed. Ut consequat semper viverra nam libero justo laoreet sit. Nisi quis eleifend quam adipiscing vitae proin sagittis nisl. Cras pulvinar mattis nunc sed blandit libero.
 

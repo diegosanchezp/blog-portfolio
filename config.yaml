@@ -1,7 +1,7 @@
 baseURL : 'https://diegosanchezp.github.io/'
 theme : 'portfolio-theme'
 
-paginate: 1
+paginate: 7
 
 module:
   mounts:
@@ -24,4 +24,8 @@ languages:
     languageName : 'Español'
     languageCode : 'es'
     weight : 2
+
+# Taxonomies categories and tags are reserved for blog posts
+# Define aditional taxonomies below, remember to list categories and tags to keep them  
+# https://gohugo.io/content-management/taxonomies/#example-adding-a-custom-taxonomy-named-series
 

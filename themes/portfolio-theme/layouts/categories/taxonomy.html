@@ -1,0 +1,18 @@
+{{ define "main" }}
+  <main class="px-2">
+    <h3>Blog Categories</h3>
+    <hr>
+    <!-- List blog categories -->
+    <div class="flex justify-center">
+      <ul class="capitalize list-decimal ml-5 mt-2 text-lg">
+      {{ range .Pages }}
+        <li>
+          <a
+            title="See available post for {{ .Title }} category"
+            href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </li>
+      {{ end }}
+      </ul>
+    </div>
+  </main>
+{{ end }}

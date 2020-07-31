@@ -1,0 +1,32 @@
+/*Utils*/
+.bord-white{
+  @apply border border-white border-solid
+}
+.bord-white-rounded{
+ @apply  bord-white rounded;
+ @apply  my-2 p-2;
+}
+
+#post-list{
+  padding: 0px 10px 0px 0px;
+}
+
+@screen smmd{
+  #post-list{
+    padding: 0px 10px 0px 10px;
+  }
+}
+
+/*Pagination for post list*/
+.pagination{
+  display: flex;
+  justify-content: center;
+}
+
+.pagination .active{
+  @apply text-primary;
+}
+
+.pagination .page-link {
+  margin: 0 5px;
+}

@@ -15,7 +15,9 @@ module.exports = {
         lightwhite: 'var(--color-lightwhite)'
       },
       screens: {
-        'sp': {'max-width': '639px'}
+        'smmd': {
+          'raw': '(min-width: 0px) and (max-width: 640px), (min-width: 641px) and (max-width: 768px)'
+        }
       }
     },
   },

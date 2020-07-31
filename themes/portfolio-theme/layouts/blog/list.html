@@ -1,30 +1,38 @@
 {{ define "blog-content" }}
 <main id="post-list">
-  <section class="border border-white border-solid rounded my-2 p-2">
+  <section id="welcome-section" class="bord-white-rounded">
     <p>Welcome to the blog here you'll find my computer science research, and things related to web page development, below you can find a list of the most recent posts.
     </p>
   </section>
   <!-- TODO: range by date -->
-  <!-- Ranges through content/posts/*.md -->
-  <article>
-  {{ range .Paginator.Pages }}
-    
-    <h3><a href="{{.RelPermalink}}">{{.Title}}</a></h3>
-    <p class="mb-2">{{ .PublishDate.Format "January 2, 2006" }}</p>
+  <!-- List most recent blog posts -->
+  <div class="flex smmd:flex-col smmd:flex-col-reverse">
+    <section id="blog-posts" class="flex-grow">
+      <!-- Ranges through content/posts/*.md -->
+      {{ range .Paginator.Pages }}
+        {{ partial "blog/article.html" . }}
+      {{ end }}
 
-    <section>
-      {{ .Summary }} 
+    {{ template "_internal/pagination.html" . }}
     </section>
 
-    <div class="flex justify-end">
-      <a href="{{.RelPermalink}}">
-        {{ partial "button.html" (dict "content" "read more") }}
-      </a>
-    </div>
-  {{ end }}
-  </article>
+    <!-- List categories -->
+    <section id="list-cat" class="flex flex-col my-0 ml-2 sm:m-0 md:m-0">
 
-  {{ template "_internal/pagination.html" . }}
-
+      <b class="uppercase">blog categories</b>
+      {{ $taxo := "categories" }}
+      {{ $catLen := 5 }}
+      <ul class="bord-white-rounded">
+        {{ with ($.Site.GetPage (printf "/%s" $taxo)) }}
+          {{ range first $catLen .Pages }}
+            <li><a class="capitalize" href="{{ .RelPermalink }}">{{ .Title}}</a></li>
+          {{ end }}
+          {{ if gt (len .Pages) $catLen }}
+            <a href="{{printf "/%s" $taxo}}">See other categories</a>
+          {{ end }}
+        {{ end }}
+      </ul>
+    </section>
+  </div>
 </main>
 {{ end }}

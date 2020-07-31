@@ -1,0 +1,14 @@
+<!-- A blog post or article presentation-->
+<!-- See archetype/blog.md for available metadata-->
+<article>
+  <h3><a href="{{.RelPermalink}}">{{.Title}}</a></h3>
+  <p class="mb-2">{{ .PublishDate.Format "January 2, 2006" }}</p>
+
+  <p>{{ .Summary }}</p>
+
+  <div class="flex justify-end">
+    <a href="{{.RelPermalink}}">
+      {{ partial "button.html" (dict "content" "read more") }}
+    </a>
+  </div>
+</article>
