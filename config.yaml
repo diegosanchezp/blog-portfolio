@@ -9,6 +9,11 @@ module:
     target : 'assets/js/ripple.min.js'
   - source : './themes/portfolio-theme/node_modules/@fortawesome/fontawesome-free/svgs'
     target : 'assets/svgs/' 
+  # dialog polyfill
+  - source: './themes/portfolio-theme/node_modules/dialog-polyfill/dist/dialog-polyfill.js'
+    target: 'static/js/dialog-polyfill.js'
+  - source: './themes/portfolio-theme/node_modules/dialog-polyfill/dist/dialog-polyfill.css'
+    target: 'static/css/dialog-polyfill.css'
 
 DefaultContentLanguage : 'en'
 copyright : 'Everything is mine bro'

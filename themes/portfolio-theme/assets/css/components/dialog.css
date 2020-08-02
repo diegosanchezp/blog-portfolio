@@ -1,3 +1,9 @@
-dialog::backdrop {
+dialog::backdrop { /* native */
   background: rgba(0,0,0,.50);
 }
+
+dialog + .backdrop { /* polyfill */
+  background: rgba(0,0,0,.50);
+}
+
+
