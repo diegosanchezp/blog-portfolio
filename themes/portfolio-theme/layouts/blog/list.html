@@ -22,10 +22,10 @@
       <b class="uppercase">blog categories</b>
       {{ $taxo := "categories" }}
       {{ $catLen := 5 }}
-      <ul class="bord-white-rounded">
+      <ul class="smmd:flex smmd:flex-wrap list-none bord-white-rounded">
         {{ with ($.Site.GetPage (printf "/%s" $taxo)) }}
           {{ range first $catLen .Pages }}
-            <li><a class="capitalize" href="{{ .RelPermalink }}">{{ .Title}}</a></li>
+            <li class="mx-2"><a class="capitalize" href="{{ .RelPermalink }}">{{ .Title}}</a></li>
           {{ end }}
           {{ if gt (len .Pages) $catLen }}
             <a href="{{printf "/%s" $taxo}}">See other categories</a>

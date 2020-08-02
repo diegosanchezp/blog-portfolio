@@ -43,8 +43,7 @@
 #quick-nav { display: none;}
 
 /*styles for sm and md*/
-@media (min-width: 0px) and (max-width: 640px), (min-width: 641px) and (max-width: 768px){
-
+@screen smmd {
   #blog-body{ column-gap: 0px }
   #quick-nav{
     display: flex;
