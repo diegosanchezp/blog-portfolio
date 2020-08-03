@@ -23,6 +23,7 @@ hugo/static/styles
 **/npm-debug.log
 
 # misc
+lighthouseReport.html
 .env
 .sass-cache
 NOTES.md
