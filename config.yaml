@@ -5,6 +5,8 @@ paginate: 7
 
 module:
   mounts:
+  - source: static
+    target: static
   - source : './themes/portfolio-theme/node_modules/vanilla-ripplejs/ripple.min.js'
     target : 'assets/js/ripple.min.js'
   - source : './themes/portfolio-theme/node_modules/@fortawesome/fontawesome-free/svgs'
