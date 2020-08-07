@@ -1,10 +1,11 @@
 {{ define "blog-content" }}
   <!-- Note: this elements are direct children of <body> -->
 
-  <section id="post-title" class=" smmd:p-2">
+  <section id="post-title" class="smmd:p-2">
     <h1>{{ .Title }}</h1>
+    <time datetime="{{.Date}}">{{ .PublishDate.Format "January 2, 2006" }}</time>
     <!-- List blog categories -->
-    <div class="flex">
+    <div class="flex my-2">
       {{ $class := "border bord-white p-1 font-bold capitalize border-solid mr-2" }}
       {{ range $elem_index,$_ := .GetTerms "categories" }}
         {{ if eq $elem_index 0 }}
