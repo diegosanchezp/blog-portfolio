@@ -1,0 +1,9 @@
+{{ if .IsNamedParams }}
+<p {{ with .Get "class" }}class="{{.}}"{{ end }}
+   {{ with .Get "style" }}style="{{.}}"{{ end }}
+>
+  {{ .Inner }}
+</p>
+{{ else }}
+{{ errorf "Define at least one of the following attr: [class, style]" }}
+{{ end }}
