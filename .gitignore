@@ -10,7 +10,8 @@ hugo/data/components.json
 hugo/data/styles.json
 hugo/static/components
 hugo/static/styles
-
+hugo/content/blog/post_test.md
+hugo/content/blog/post_test2.md
 ### End Hugo ###
 
 # compiled output

@@ -13,7 +13,6 @@ draft: true
 - C
 
 Lorem `ipsum` dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci sagittis eu volutpat odio facilisis mauris sit. Consectetur adipiscing elit duis tristique sollicitudin nibh. Mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien. Rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar. Aliquam sem et tortor consequat. Duis convallis convallis tellus id interdum. Purus sit amet luctus venenatis lectus magna. A condimentum vitae sapien pellentesque habitant morbi tristique senectus. Lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi. Id leo in vitae turpis massa sed elementum tempus.
-
 {{< highlight go "linenos=table,hl_lines=8 15-17,linenostart=199,style=api" >}}
   // GetTitleFunc returns a func that can be used to transform a string to
   // title case.
