@@ -31,18 +31,23 @@ figure img {
 
 /* Code rendering related */
 #post-content p > code, #post-content li > code{
-  font-weight: 500;
   background-color: var(--color-secondary);
-  border-radius: 3px;
-  padding: 4px;
-  color: greenyellow;
+  color: var(--color-code);
+}
+
+@screen xl{
+  #post-content p > code, #post-content li > code{
+    border-radius: 3px;
+    padding: 4px;
+  }
 }
 
 .highlight > pre{
   overflow-x: auto;
 }
+
 .code-color{
-  color: greenyellow;
+  color: var(--color-code);
 }
 
 #tableofcontents{
@@ -55,3 +60,9 @@ figure img {
   margin: 0;
 }
 
+/*Responsive styles */
+@screen smmd{
+  .highlight {
+    font-size: .875rem;
+  }
+}
