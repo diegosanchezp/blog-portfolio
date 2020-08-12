@@ -3,7 +3,10 @@
 
   <section id="post-title" class="smmd:p-2">
     <h1>{{ .Title }}</h1>
-    <time datetime="{{.Date}}">{{ .PublishDate.Format "January 2, 2006" }}</time>
+    <time datetime="{{.Date}}">{{ .Date.Format "January 2, 2006" }}</time>
+    {{ if ne .Lastmod .Date }}
+    <p>Last modified: <time datetime="{{.Lastmod }}">{{ .Lastmod.Format "January 2, 2006" }}</time></p>
+    {{ end }} 
     <!-- List blog categories -->
     <div class="flex my-2">
       {{ $class := "border bord-white p-1 font-bold capitalize border-solid mr-2" }}

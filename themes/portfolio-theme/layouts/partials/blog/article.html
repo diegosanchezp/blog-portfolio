@@ -2,10 +2,13 @@
 <!-- See archetype/blog.md for available metadata-->
 <article>
   <h3><a href="{{.RelPermalink}}">{{.Title}}</a></h3>
-  <time datetime="{{.Date}}">{{ .PublishDate.Format "January 2, 2006" }}</time>
+  <time datetime="{{.Date }}">{{ .Date.Format "January 2, 2006" }}</time>
 
-  <p>{{ .Summary }}</p>
-
+  {{ with .Description }}
+    <p>{{ . }}</p>
+  {{ else }}
+    <p>{{.Summary }}</p>
+  {{ end }} 
   <div class="flex justify-end">
     <a href="{{.RelPermalink}}">
       {{ partial "button.html" (dict "content" "read more") }}
