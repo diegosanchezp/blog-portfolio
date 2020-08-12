@@ -1,4 +1,4 @@
-/* ATENTION: do not @import this file in main.css 
+/* ATTENTION: do not @import this file in main.css 
  * quicknav: only to be displayed on sm, md
  * */
 @import 'assets/css/pages/blog.single'; 
@@ -11,7 +11,8 @@
     "sidenav post-title toc"
     "sidenav post-content toc"
   ;
-  grid-template-columns: minmax(auto,var(--sidenav-max-width)) 1fr minmax(100px, 230px);
+  grid-template-columns: var(--sidenav-max-width) minmax(400px, auto) auto;
+
   grid-template-rows: auto max-content;
   column-gap: 10px;
 }
@@ -38,6 +39,20 @@
 #TableOfContents{ position: fixed; }
 
 #tableofcontents{ width: 100%; }
+
+/*List styles*/
+
+ul a:hover{
+  text-decoration: underline;
+}
+
+ul a::before{
+  content: "- "
+}
+
+ul a:hover::before{
+  content: "->"
+}
 
 /*quicknav related styles*/
 #quick-nav { display: none;}
@@ -83,14 +98,14 @@
       "sidenav post-content"
       "quick-nav quick-nav"
     ;
-    grid-template-columns: var(--sidenav-md-width) 1fr;
+    grid-template-columns: var(--sidenav-md-width) calc(100% - var(--sidenav-md-width));
     grid-template-rows: repeat(3, auto) var(--quicknav-height);
   }
 }
 
 @screen lg{
   #blog-body{
-    grid-template-columns: var(--sidenav-md-width) 1fr 140px;
+    grid-template-columns: var(--sidenav-md-width) minmax(400px, auto) auto;
   }
 }
 
