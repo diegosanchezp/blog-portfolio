@@ -1,9 +1,23 @@
-ul { 
+ul, ol { 
   padding: 0 8px;
   margin: 0 10px;
+}
+
+ul{
   list-style: disc;
 }
 
+ol{
+  list-style: auto;
+}
+
+figure figcaption > h4{
+  font-size: 1.25rem;
+  text-align: center;
+}
+figure img {
+  margin: 0 auto;
+} 
 #post-content > p {
   @apply my-2;
 }
@@ -16,7 +30,7 @@ ul {
 }
 
 /* Code rendering related */
-#post-content p > code{
+#post-content p > code, #post-content li > code{
   font-weight: 500;
   background-color: var(--color-secondary);
   border-radius: 3px;
@@ -24,8 +38,16 @@ ul {
   color: greenyellow;
 }
 
+.highlight > pre{
+  overflow-x: auto;
+}
 .code-color{
   color: greenyellow;
+}
+
+#tableofcontents{
+  min-width: 180px;
+  max-width: 230px;
 }
 
 #TableOfContents ul{
@@ -33,10 +55,3 @@ ul {
   margin: 0;
 }
 
-#TableOfContents a:hover{
-  text-decoration: underline;
-}
-
-#TableOfContents a:hover::before{
-  content: "->"
-}
