@@ -10,7 +10,7 @@ description: &desc "Import maps is a browser proposal that allow web pages to co
 
 # Referencing the value of desc
 
-draft: true
+draft: false
 categories: ["Web development"]
 ---
 
@@ -127,7 +127,7 @@ Next serve the html file
 
 `npx es-dev-server --app-index index.html --watch --open`
 
-{{< figure src="/blog/index.png" alt="index screenshot" title="Index page with custom button" >}}
+{{< figure src="/blog/import-maps/index.png" alt="index screenshot" title="Index page with custom button" >}}
 
 Let's explain some things about the example.
 
@@ -281,7 +281,7 @@ Run the server
 
 You should see a blank page with a button
 
-{{< figure src="/blog/snowpack.png" alt="snowpack page" title="Snowpack page with paper button" >}}
+{{< figure src="/blog/import-maps/snowpack.png" alt="snowpack page" title="Snowpack page with paper button" >}}
 
 ## Conclusion
 
