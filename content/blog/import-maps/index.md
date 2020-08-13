@@ -52,13 +52,15 @@ Currently import maps are a experimental feature, the only browser that has impl
 
 1. Enable import maps on google-chrome by putting in the address bar the url `chrome://flags/`, then search for import maps in the search bar and enable the flag "Experimental Productivity Features".
 
+{{< figure src="/blog/import-maps/chrome-experimental-importmap-min.png" title="Chrome flag Experimental Productivity Features " alt="Chrome flag Experimental Productivity Features image" >}}
+
 2. Use a polyfill, in this moment there are two,[es-module-shims](https://github.com/guybedford/es-module-shims) and [SystemJS](https://github.com/systemjs/systemjs) for the following example I'll be using the first one.
 
 Let's begin setting up the example by installing the required dependencies
 
 - `es-dev-server` we are going to need a server because the polyfill uses the fetch api.
 - `es-module-shims` the polyfill that's going to do the import magic 
-- `lit-element` the dependency that uses the node module ecosystem
+- `lit-element` the dependency that uses the npm system
 
 Install the dependencies with yarn only, we'll need the generated `yarn.lock` file for later.
 
@@ -66,7 +68,7 @@ Install the dependencies with yarn only, we'll need the generated `yarn.lock` fi
 
 `yarn add es-module-shims lit-element`
 
-Then we are going to craft the html file which will have the import map and the js code that uses imports with the bare syntax
+Then we are going to craft the html file which will have the import map and the javascript code that uses imports with the bare syntax
 
 Make an html file that requires the lit-html dependency
 
@@ -135,7 +137,9 @@ Let's explain some things about the example.
 
 - If you are using chrome with the enabled flag “Experimental Productivity Features”. You don't need line 6, change line 11 to `<script type="importmap"></script>`  and line 23 to `<script type="module"></script>`.
 
-There is still one thing you might be asking. How did you know how to list those other imports ? If you are only importing lit-element. Well that's one thing we have to take care about, the internal imports of lit-element, doing this by hand might be a huge pain, the import map you see above took me a few minutes to setup, I've had to see analyze the `package.json` of `lit-element` and `lit-html` since the first one is dependent on the last one. So the ideal is to have some tool that generate the import map for ourselves and thats the next subject.  
+There is still one thing you might be asking. How did you know how to list those other imports ? If you are only importing lit-element. Well that's one thing we have to take care about, the internal imports of lit-element, doing this by hand might be a huge pain, the import map you see above took me a few minutes to setup, I've had to analyze the `package.json` of `lit-element` and `lit-html` since the first one is dependent on the last one. Even the import map that I've provided could fail for others imports of lit-html.
+
+So the ideal is to have something more robust, a tool that automatically generates the import map for ourselves.   
 
 ### Generating import maps
 We'll use the package [@import-maps/generate](https://www.npmjs.com/package/@import-maps/generate) to generate the import map. The caveats are that it only supports `yarn.lock` file ( this is why the dependencies must have be installed only with yarn at the beginning ) and that Windows paths are not supported.
@@ -189,11 +193,11 @@ Lastly include the import map by replacing line 11 on the index.html file used b
 ```
 
 ## The problem of NodeJs packages
-Some NodeJs packages might not be compatible with the browser, back before the `import/export` (ESM modules) syntax, `require()` (CommonJS) was used instead. There is a chance that some package uses a dependency that uses the old syntax making it unusable in the browser since it only understands `import/export`. The solution to the problem would be to simply convert the old syntax to the new one, there is a tool that does that automatically [Snowpack][snowpack] the next example is about it.
+Some NodeJs packages might not be compatible with the browser, back before the `import/export` (ESM modules) syntax, `require()` (CommonJS) was used instead. There is a chance that some package uses a dependency that uses the old syntax making it unusable in the browser since it only understands `import/export`. The solution to the problem would be to simply convert the old syntax to the new one, there is a tool that does that automatically [Snowpack][snowpack], the next example is about it.
 
 The reason why I choose the lit-element package was because it's ESM ready, thus avoiding the problem described above.
 
-For the example that covers this topic will continue using web components, instead of making one we will download the paper-button from @polymer. The characteristic of this is that it's not declared as an ESM module. If you inspect the `node_modules/@polymer/paper-button/package.json` it has no **"module"** field, even do the file main file uses `import` syntax.
+For the example that covers this topic will continue using web components, instead of making one we will download the paper-button from [@polymer](https://www.npmjs.com/package/@polymer/paper-button). The characteristic of this is that it's not declared as an ESM module. If you inspect the `node_modules/@polymer/paper-button/package.json` it has no **"module"** field, even do the file main file uses `import` syntax.
 
 Running the generator from the last example, will trow an exception
 
@@ -203,7 +207,7 @@ Running the generator from the last example, will trow an exception
 
 I've inspect the `package.json` of 'iron-behaviors' and didn't find the "main" field. Which is probably what's causing problems.
 
-Back to Snowpack, it acts as a middleware or intermediary between the dependencies stored in the `node_modules` folder and the web browser making these fully compatible. Takes as input a `.js` file declared as main module field in `package.json`, analyzes the declared imports and outputs a `web_modules` folder with bundled javascript files and the respective import map. 
+Back to Snowpack, it acts as a middleware or intermediary between the dependencies stored in the `node_modules` folder and the web browser making these fully compatible. Takes as input a `.js` file declared as main in `package.json`, analyzes the declared imports and outputs a `web_modules` folder with bundled javascript files and the respective import map. 
 
 To start the example install snowpack
 
@@ -262,9 +266,9 @@ web_modules/
 {{< /highlight >}}
 {{< /codecenter >}} 
 
-If some of the dependencies share a common dependency they will be put in a common folder
+If some of the dependencies share a common dependency they will be put in a common folder.
 
-Like the last generator you'll want to update the `import-map.json` every time a dependency is added, to do so, add to `package.json` a postinstall script
+Like the last generator you'll want to update the `import-map.json` every time a dependency is added, to do so, add to `package.json` a postinstall script.
 
 ```json
 "scripts": {
@@ -291,9 +295,9 @@ Check out the [github source code repository](https://github.com/diegosanchezp/i
 
 Snowpack and the polyfill es-module-shim can do much more than the examples provided here. I encourage you to checkout their documentation.  
 
-You can check the progress of the import maps on chromestatus.com
+You can check the progress of the import maps on [chromestatus.com][1]
 
-Import maps can also be used with [unpkg](https://unpkg.com/) content delivery network. The bare syntax can be mapped to an unpkg url,[Deno](https://deno.land/manual/linking_to_external_code/import_maps) does the same. You can even use unpkg urls as a fallback in case a module is not available in the node_modules folder.
+Import maps can also be used with [unpkg](https://unpkg.com/) content delivery network. The bare syntax can be mapped to an unpkg url,[Deno](https://deno.land/manual/linking_to_external_code/import_maps) uses import maps to do something similar. You can even use unpkg urls as a fallback in case a module is not available in the node_modules folder.
 
 ## References
 <!-- These links are referenced twice in the blog -->
@@ -301,13 +305,10 @@ Import maps can also be used with [unpkg](https://unpkg.com/) content delivery n
 
 [snowpack]: https://www.snowpack.dev/ "Snowpack Website"
 
-
 [Snowpack][snowpack]
 
 [Import maps - chromestatus.com][1]
 
 [Import maps - Editor's draft](https://github.com/WICG/import-maps)
-
-[Using import maps and lit-element web components](https://coryrylan.com/blog/using-import-maps-and-lit-element-web-components) 
 
 [Import Maps Draft Community Group Report](https://wicg.github.io/import-maps/)
