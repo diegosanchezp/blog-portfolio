@@ -19,6 +19,7 @@
 
 /*Current page selected*/
 .sidebar-nav-item-active{
+  /* purgecss ignore current */
   box-shadow: 0px 0px 20px var(--color-lightwhite);
 }
 

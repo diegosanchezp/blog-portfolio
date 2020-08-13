@@ -12,10 +12,12 @@ ol{
 }
 
 figure figcaption > h4{
+/* purgecss ignore current */
   font-size: 1.25rem;
   text-align: center;
 }
 figure img {
+/* purgecss ignore current */
   margin: 0 auto;
 } 
 #post-content > p {
@@ -31,22 +33,26 @@ figure img {
 
 /* Code rendering related */
 #post-content p > code, #post-content li > code{
+  /* purgecss ignore current */
   background-color: var(--color-secondary);
   color: var(--color-code);
 }
 
 @screen xl{
   #post-content p > code, #post-content li > code{
+  /* purgecss ignore current */
     border-radius: 3px;
     padding: 4px;
   }
 }
 
 .highlight > pre{
+  /* purgecss ignore current */
   overflow-x: auto;
 }
 
 .code-color{
+  /* purgecss ignore current */
   color: var(--color-code);
 }
 
