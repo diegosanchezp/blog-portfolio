@@ -4,14 +4,16 @@ title: "Using NodeJs packages in the browser with import maps "
 date: 2020-08-12
 lastmod: ""
 author: "Diego Sánchez"
+
 # Desc is a pointer to the string node
-
 description: &desc "Import maps is a browser proposal that allow web pages to control the behavior of JavaScript imports, in this article will cover the usage of this feature with nodejs packages, the related problems, and posible solutions."
-
-# Referencing the value of desc
 
 draft: false
 categories: ["Web development"]
+ogtype: article
+image:
+  url: "https://diegosanchezp.github.io/blog/import-maps/chrome-experimental-importmap-min.png"
+  alt: "Import maps on Chrome"
 ---
 
 ## What are import maps

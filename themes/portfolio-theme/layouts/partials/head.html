@@ -1,20 +1,44 @@
-<!-- Website metadata -->
 
 <meta charset="utf-8" />
+<!-- CSS metadata -->
+<meta name="color-scheme" content="dark">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- Website metadata -->
 <title>
   {{- .Title }} - {{ .Site.Title -}}
 </title>
-{{- if .Description }}
-<meta name="description" content="{{ .Description }}" />
-{{ end -}}
+
+{{ with .Description }}
+  <meta name="description" content="{{ . }}" />
+  <meta property="og:description" content="{{ . }}" />
+{{ end }}
+
 {{- if .Keywords }}
   <meta name="keywords" content="{{ delimit .Keywords "," }}" />
 {{ end -}}
-  {{- if .Params.Author }}
-  <meta name="author" content="{{ .Params.Author}}" />
-  {{ end -}}
+
+{{- with .Params.Author }}
+  <meta name="author" content="{{ . }}" />
+{{ end -}}
+
 {{ hugo.Generator }}
+
+<!-- Open Graph Protocol & Twitter -->
+<meta property="og:title" content="{{ .Title }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+
+{{- with .Params.ogtype}}
+  <meta property="og:type" content="{{ . }}" />
+{{ else }}
+  <meta property="og:type" content="website" />
+{{ end -}}
+
+{{- with .Params.image }}
+  <meta property="og:image" content="{{$.Param "image.url" }}" />
+  <meta property="og:image:alt" content="{{$.Param "image.alt" }}" />
+  <meta property="twitter:image:alt" content="{{$.Param "image.alt" }}" />
+{{ end -}}
 
 <!-- TRANSLATION STUFF -->
 {{ if .IsTranslated }}
