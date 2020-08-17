@@ -1,5 +1,6 @@
 /* Tailwind base - put variables under: tailwind.config.js */
 
+/* purgecss start ignore */
 @import "node_modules/tailwindcss/base";
 @import 'assets/css/base/base';
 
@@ -17,8 +18,12 @@
 @import 'assets/css/components/button';
 @import 'assets/css/components/project-card';
 @import 'assets/css/components/dialog';
+/* purgecss end ignore */
 
 /* Tailwind's utility classes - generated based on config file */
 @import "node_modules/tailwindcss/utilities";
 /*Add any custom utilities to the end of your CSS file to avoid specificity issues */
+
+/* purgecss start ignore */
 @import 'assets/css/utils/utils';
+/* purgecss end ignore */

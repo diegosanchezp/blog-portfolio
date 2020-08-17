@@ -1,5 +1,17 @@
+const themeDir = __dirname + '/../../';
+
 module.exports = {
-  purge: [],
+  // === Removing unused css === //
+
+  // 1. Provide an array of paths to all of your template files using the purge option
+  purge: [
+    themeDir + 'layouts/**/*.html',
+    themeDir + 'content/**/*.html',
+    'layouts/**/*.html',
+    'content/**/*.html',
+    'exampleSite/layouts/**/*.html',
+    'exampleSite/content/**/*.html',
+  ],
   theme: {
     screens: {
       'sm': {'min': '0px', 'max': '640px'},

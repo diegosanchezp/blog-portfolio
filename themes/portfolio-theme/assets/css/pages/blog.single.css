@@ -12,12 +12,10 @@ ol{
 }
 
 figure figcaption > h4{
-/* purgecss ignore current */
   font-size: 1.25rem;
   text-align: center;
 }
 figure img {
-/* purgecss ignore current */
   margin: 0 auto;
 } 
 #post-content > p {
@@ -33,7 +31,6 @@ figure img {
 
 /* Code rendering related */
 #post-content p > code, #post-content li > code{
-  /* purgecss ignore current */
   background-color: var(--color-secondary);
   color: var(--color-code);
 }
