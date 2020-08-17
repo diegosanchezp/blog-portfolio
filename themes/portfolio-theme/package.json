@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "dev:hugo": "env MODE=\"development\" hugo server --i18n-warnings --path-warnings --buildDrafts --disableFastRender --bind 0.0.0.0",
-    "build:hugo": "env MODE=\"production\" hugo -e \"production\" --minify --debug --i18n-warnings --path-warnings",
+    "build:hugo": "rm -r public && env MODE=\"production\" hugo -e \"production\" --minify --debug --i18n-warnings --path-warnings",
     "gh:deploy": "gh-pages -d ../../public -r 'https://github.com/diegosanchezp/diegosanchezp.github.io.git' -b master"
   },
   "devDependencies": {
