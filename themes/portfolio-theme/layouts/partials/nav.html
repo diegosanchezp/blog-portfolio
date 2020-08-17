@@ -15,7 +15,7 @@
       {{ range .Site.Menus.main.ByWeight }}
         <hr>
         <a 
-          class="font-bold
+          class="font-medium
           sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}-active{{end}} 
           relative py-2 rounded px-2" 
           href="{{ .URL }}" 

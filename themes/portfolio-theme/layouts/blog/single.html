@@ -2,7 +2,7 @@
   <!-- Note: this elements are direct children of <body> -->
 
   <section id="post-title" class="smmd:p-2">
-    <h1>{{ .Title }}</h1>
+    <h1 class="sm:text-center">{{ .Title }}</h1>
     <time datetime="{{.Date}}">{{ .Date.Format "January 2, 2006" }}</time>
     {{ if ne .Lastmod .Date }}
     <p>Last modified: <time datetime="{{.Lastmod }}">{{ .Lastmod.Format "January 2, 2006" }}</time></p>
