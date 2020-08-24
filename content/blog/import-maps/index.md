@@ -12,7 +12,7 @@ draft: false
 categories: ["Web development"]
 ogtype: article
 image:
-  url: "https://diegosanchezp.github.io/blog/import-maps/chrome-experimental-importmap-min.png"
+  url: "https://diegosanchezp.github.io/blog/import-maps/import-maps-cover.png"
   alt: "Import maps on Chrome"
 ---
 
