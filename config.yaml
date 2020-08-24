@@ -1,5 +1,5 @@
 baseURL : 'https://diegosanchezp.github.io/'
-theme : 'portfolio-theme'
+# theme : 'portfolio-theme'
 
 paginate: 7
 
@@ -7,14 +7,16 @@ module:
   mounts:
   - source: static
     target: static
-  - source : './themes/portfolio-theme/node_modules/vanilla-ripplejs/ripple.min.js'
+  - source: assets
+    target: assets
+  - source : './node_modules/vanilla-ripplejs/ripple.min.js'
     target : 'assets/js/ripple.min.js'
-  - source : './themes/portfolio-theme/node_modules/@fortawesome/fontawesome-free/svgs'
+  - source : './node_modules/@fortawesome/fontawesome-free/svgs'
     target : 'assets/svgs/' 
   # dialog polyfill
-  - source: './themes/portfolio-theme/node_modules/dialog-polyfill/dist/dialog-polyfill.js'
+  - source: './node_modules/dialog-polyfill/dist/dialog-polyfill.js'
     target: 'static/js/dialog-polyfill.js'
-  - source: './themes/portfolio-theme/node_modules/dialog-polyfill/dist/dialog-polyfill.css'
+  - source: './node_modules/dialog-polyfill/dist/dialog-polyfill.css'
     target: 'static/css/dialog-polyfill.css'
 
 DefaultContentLanguage : 'en'

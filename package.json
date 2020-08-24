@@ -1,1 +1,18 @@
-themes/portfolio-theme/package.json
+{
+  "scripts": {
+    "dev:hugo": "env MODE=\"development\" hugo server --i18n-warnings --path-warnings --buildDrafts --disableFastRender --bind 0.0.0.0",
+    "build:hugo": "rm -r public && env MODE=\"production\" NODE_ENV=\"production\" hugo -e \"production\" --minify --debug --i18n-warnings --path-warnings",
+    "gh:deploy": "gh-pages -d public -r 'https://github.com/diegosanchezp/diegosanchezp.github.io.git' -b master"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.1.0",
+    "postcss-cli": "^7.1.1",
+    "postcss-import": "^12.0.1",
+    "tailwindcss": "^1.7.3"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.14.0",
+    "dialog-polyfill": "^0.5.3",
+    "vanilla-ripplejs": "^1.0.6"
+  }
+}
