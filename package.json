@@ -1,8 +1,9 @@
 {
   "scripts": {
     "dev:hugo": "env MODE=\"development\" hugo server --i18n-warnings --path-warnings --buildDrafts --disableFastRender --bind 0.0.0.0",
-    "build:hugo": "rm -r public && env MODE=\"production\" NODE_ENV=\"production\" hugo -e \"production\" --minify --debug --i18n-warnings --path-warnings",
-    "gh:deploy": "gh-pages -d public -r 'https://github.com/diegosanchezp/diegosanchezp.github.io.git' -b master"
+    "build:hugo": "rm -rf public && env MODE=\"production\" NODE_ENV=\"production\" hugo -e \"production\" --minify --debug --i18n-warnings --path-warnings",
+    "gh:deploy": "gh-pages -d public -r 'https://github.com/diegosanchezp/diegosanchezp.github.io.git' -b master",
+    "deploy": "npm run build:hugo && echo \"DEPLOYING TO GITHUB PAGES\" && npm run gh:deploy"
   },
   "devDependencies": {
     "gh-pages": "^3.1.0",
