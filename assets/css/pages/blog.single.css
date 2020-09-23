@@ -43,11 +43,10 @@ figure img {
   }
 }
 
-.highlight > pre{
+pre {
   /* purgecss ignore current */
   overflow-x: auto;
 }
-
 .code-color{
   /* purgecss ignore current */
   color: var(--color-code);
